@@ -1,0 +1,27 @@
+<!-- AngularJS: Up and Running, chapter 3 -->
+<!DOCTYPE html>
+<html ng-app="notesApp">
+    <head>
+        <title>Notes App - Unit tests</title>
+        <style type="text/css">
+            .finished {
+                background-color: green;
+            }
+            .unfinished {
+                background-color: red;
+            }
+        </style>
+    </head>
+    <body ng-controller="ListCtrl as ctrl">
+        <!-- contents of the element on which ng-repeat is called is considered a template -->
+        <div ng-repeat="item in ctrl.items"
+             ng-class="ctrl.getDoneClass(item)">
+            <span class="label">{{ item.label }}</span>
+            
+        </div>
+
+        <script src="../../libs/angularjs/1.7.5/angular.js"></script>
+        <script src="notesApp.js"></script>
+        <script src="controller.js"></script>
+    </body>
+</html>
